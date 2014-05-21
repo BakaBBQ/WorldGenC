@@ -42,3 +42,7 @@ int tile_SetTileId(char *set, int index, int shape){
     }
     return result;
 }
+
+Tile tile_TileIdToSet(id){
+    
+}
