@@ -11,15 +11,16 @@
  I feel like i am doing a lot of things and codings but
  i feel like i am wasting time
  
- at least it is more efficient._.
+ at least it is more efficient._. (WTF ruby is faster =-=?)
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define WIDTH 30
-#define HEIGHT 30
-#define TOTALSTEPS 2
+#include <string.h>
+#define WIDTH 40
+#define HEIGHT 40
+#define TOTALSTEPS 5
 static int die = 0;
 static int live = 1;
 
@@ -32,11 +33,15 @@ static int map[WIDTH][HEIGHT] = {{0}};
 static int cmap[WIDTH][HEIGHT] = {{0}};
 int main(int argc, const char * argv[])
 {
-    //printf("test");
     start_gen();
-    step();
-    step();
-    step();
+
+	
+	int i;
+	for (i = 0; i <= TOTALSTEPS ; i ++){
+		//print_state();
+		step();
+	}
+	print_state();
     return 0;
 }
 
@@ -60,7 +65,6 @@ int start_gen(){
 }
 
 int step(){
-    print_state();
     memcpy(cmap, map, sizeof(map));
     int i;
     int j;
