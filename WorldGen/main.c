@@ -23,31 +23,35 @@
 static int die = 0;
 static int live = 1;
 
-int init_state();
+int start_gen();
 int print_state();
+int step();
+int cellStep();
+int livingNeighborCnt();
 static int map[WIDTH][HEIGHT] = {{0}};
 static int cmap[WIDTH][HEIGHT] = {{0}};
 int main(int argc, const char * argv[])
 {
-    printf("test");
-    init_state();
-    //step();
-    //step();
-    //step();
+    //printf("test");
+    start_gen();
+    step();
+    step();
+    step();
     return 0;
 }
 
-int init_state(){
-    //srand(time(NULL));
+int start_gen(){
+    srand(time(NULL));
     int r;
-    for (int i = 0; i < WIDTH; i ++){
-        printf("iterating...");
-        for (int j = 0; j < HEIGHT; j ++){
+    int i;
+    int j;
+    for (i = 0; i < WIDTH; i ++){
+        for (j = 0; j < HEIGHT; j ++){
             r  = rand() % 4;
             if(r == 1){
-                map[i][j] = 1;
+                map[i][j] = live;
             }else{
-                map[i][j] = 0;
+                map[i][j] = die;
             }
             
         }
@@ -58,8 +62,10 @@ int init_state(){
 int step(){
     print_state();
     memcpy(cmap, map, sizeof(map));
-    for (int i = 0; i < WIDTH; i ++){
-        for (int j = 0; j < HEIGHT; j ++){
+    int i;
+    int j;
+    for (i = 0; i < WIDTH; i ++){
+        for (j = 0; j < HEIGHT; j ++){
             cellStep(i,j);
         }
     }
@@ -92,15 +98,22 @@ int cellStep(int x, int y){
         if (cnt == 3){
             result = live;
         }
+		else{
+			result = die;
+		}
     } // end of deciding the fate of the cell
     cmap[x][y] = result;
+    
+    memcpy(map, cmap, sizeof(map));
     return 0;
 }
 
 int livingNeighborCnt(int x, int y){
     int cnt = 0;
-    for (int i = -1; i <= 1; i++){
-        for (int j = -1; j <= 1; j ++){
+    int i;
+    int j;
+    for (i = -1; i <= 1; i++){
+        for (j = -1; j <= 1; j ++){
             int tx = x + i;
             int ty = y + j;
             if (i == 0 && j == 0){
@@ -117,13 +130,19 @@ int livingNeighborCnt(int x, int y){
 
 
 int print_state(){
-    for (int i = 0; i < WIDTH; i ++){
-        for (int j = 0; j < HEIGHT; j ++){
-            printf("%d",map[i][j]);
+    int i;
+    int j;
+    for (i = 0; i < WIDTH; i ++){
+        for (j = 0; j < HEIGHT; j ++){
+            printf("%d|",map[i][j]);
         }
         printf("\n");
     }
-    printf("===================");
+    printf("===================\n");
+    
+    
     return 0;
+    
+    
 }
 
