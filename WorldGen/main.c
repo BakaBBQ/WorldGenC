@@ -13,8 +13,6 @@
 #define HEIGHT 30
 #define TOTALSTEPS 2
 
-#define DIE = 0
-#define LIVE = 1
 
 int init_state();
 int print_state();
@@ -54,9 +52,11 @@ int step(){
     return 0;
 }
 // cellStep, called to every cell on the map
+static die = 0;
+static live = 1;
 int cellStep(int x, int y){
     int cell = map[x][y];
-    if(cell == LIVE){ //Living Cell
+    if(cell == live){ //Living Cell
         // get the living neighbors
         /*
          Any live cell with fewer than two live neighbours dies, as if caused by under-population.
@@ -68,11 +68,11 @@ int cellStep(int x, int y){
         int cnt = livingNeighborCnt(x,y);
         int result;
         if (cnt < 2){
-            result = DIE;
+            result = die;
         } else if (cnt >= 2 && cnt <= 3){
-            result = LIVE;
+            result = live;
         } else{
-            result = DIE; // cruel life
+            result = live; // cruel life
         }
     }else{ //Dead Cell
         
