@@ -20,7 +20,7 @@
 #include <string.h>
 #define WIDTH 40
 #define HEIGHT 40
-#define TOTALSTEPS 5
+#define TOTALSTEPS 4
 static int die = 0;
 static int live = 1;
 
@@ -138,11 +138,12 @@ int print_state(){
     int j;
     for (i = 0; i < WIDTH; i ++){
         for (j = 0; j < HEIGHT; j ++){
-            printf("%d|",map[i][j]);
+			char r = map[i][j] == 1 ? 'O' : 'X';
+            printf("%c|",r);
         }
         printf("\n");
     }
-    printf("===================\n");
+    printf("\n");
     
     
     return 0;

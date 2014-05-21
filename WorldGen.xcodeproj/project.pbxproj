@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED465F85192C212700C3CF42 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = ED465F84192C212700C3CF42 /* main.c */; };
 		ED465F87192C212700C3CF42 /* WorldGen.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = ED465F86192C212700C3CF42 /* WorldGen.1 */; };
+		ED465F8E192C528800C3CF42 /* tile.c in Sources */ = {isa = PBXBuildFile; fileRef = ED465F8D192C528800C3CF42 /* tile.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		ED465F81192C212700C3CF42 /* WorldGen */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WorldGen; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED465F84192C212700C3CF42 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		ED465F86192C212700C3CF42 /* WorldGen.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = WorldGen.1; sourceTree = "<group>"; };
+		ED465F8D192C528800C3CF42 /* tile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tile.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				ED465F84192C212700C3CF42 /* main.c */,
 				ED465F86192C212700C3CF42 /* WorldGen.1 */,
+				ED465F8D192C528800C3CF42 /* tile.c */,
 			);
 			path = WorldGen;
 			sourceTree = "<group>";
@@ -118,6 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED465F85192C212700C3CF42 /* main.c in Sources */,
+				ED465F8E192C528800C3CF42 /* tile.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
