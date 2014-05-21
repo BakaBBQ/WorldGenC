@@ -30,6 +30,7 @@
 		ED465F84192C212700C3CF42 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		ED465F86192C212700C3CF42 /* WorldGen.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = WorldGen.1; sourceTree = "<group>"; };
 		ED465F8D192C528800C3CF42 /* tile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tile.c; sourceTree = "<group>"; };
+		ED465F8F192C547B00C3CF42 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +47,7 @@
 		ED465F78192C212700C3CF42 = {
 			isa = PBXGroup;
 			children = (
+				ED465F8F192C547B00C3CF42 /* Readme.md */,
 				ED465F83192C212700C3CF42 /* WorldGen */,
 				ED465F82192C212700C3CF42 /* Products */,
 			);
